@@ -1,0 +1,198 @@
+$bgcol: #fff;
+$fontcol: #0d0d0d;
+$orange: #d0693a;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: $bgcol;
+  color: $fontcol;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+
+  * {
+    box-sizing: border-box;
+    outline: none !important;
+  }
+}
+
+header {
+  min-height: 100vh;
+  background-image: url("img/cover.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+
+  padding: 0 10% 5em 10%;
+  color: $orange;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  grid-template-columns: 1fr auto;
+
+  h1 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    font-size: 10em;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0;
+    margin: 0 5rem 0 0;
+  }
+
+  div.h2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    vertical-align: bottom;
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: 400;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  h6 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+  }
+
+  #logo-soc {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    text-align: end;
+
+    img {
+      height: 2em;
+      width: auto;
+      padding: 1em 0 0 0;
+    }
+  }
+
+}
+
+section {
+  margin: 4em 20% 0 20%;
+
+  h3 {
+    color: $orange;
+    text-transform: uppercase;
+    font-weight: inherit;
+  }
+
+  p {
+    margin: 0 0 1.5em 0;
+  }
+}
+
+section#cities {
+  margin: 4em 0 0 0;
+
+  canvas {
+    cursor: move;
+  }
+
+  nav {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    padding: 1em 10% 1em 10%;
+
+    #city-buttons {
+      pointer-events: auto;
+      grid-row: 1 / 2;
+      justify-self: center;
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(5, 1fr);
+      position: sticky;
+      top: 0;
+
+      button {
+        cursor: pointer;
+        border-radius: 0;
+        background-color: $bgcol;
+        border: 2px solid lighten($fontcol, 30%);
+        transition: all 0.5s;
+        padding: 0.5em 1em 0.5em 1em;
+        margin: 0 1em 0 1em;
+      }
+
+      button.active {
+        background-color: lighten($fontcol, 30%);
+        color: $bgcol;
+      }
+    }
+
+    #up, #down {
+      pointer-events: auto;
+      cursor: pointer;
+      //background-color: darken($bgcol, 5%);
+      background-color: $bgcol;
+      border-radius: 100%;
+      box-shadow: none;
+      padding: 0.5em;
+      border: none;
+
+      path {
+        fill: none;
+        stroke-width: 4px;
+        stroke-opacity: 0.5;
+        stroke: $fontcol;
+      }
+    }
+
+    #up {
+      justify-self: center;
+      grid-row: 2 / 3;
+      margin-top: 1em;
+    }
+
+    #down {
+      justify-self: center;
+      grid-row: 4 / 5;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+#poznyaki {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+img.chart {
+  max-width: 100%;
+  margin: 1em 0 2em 0;
+}
+
+#hists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1em 0 2em 0;
+
+  img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
