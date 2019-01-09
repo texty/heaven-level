@@ -2,6 +2,5 @@
 node_modules/
 blend/
 *.pdf
-cities/*.bin
-
-cities_copy/
+webplayer/shaders
+webplayer/*.bin
