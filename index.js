@@ -1,4 +1,5 @@
 const $ = require('jquery');
+const tippy = require('tippy.js');
 
 const cols = {
     bgcol: '#ffffff',
@@ -6,34 +7,55 @@ const cols = {
     orange: '#d0693a',
 };
 
-const fs = parseFloat($('body').css('font-size'));
+$(document).ready(function () {    
+    
+    $('nav button').click(function () {
+        const $t = $(this);
+        if ($t.hasClass('active')) { 
+            if (window.innerWidth < 750) {
+                $t.siblings('button')
+                    .fadeToggle({
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false,
+                    })
+                    .toggleClass('mob-vis');
+            } else {
+                return;
+            }
+        } else {
+            $('nav button').removeClass('active');
+            $t.addClass('active');
+            $('#viewer').attr('src', `webplayer/webplayer.html?load=${$t.data('city')}.json`);
 
-$('#cities nav > button svg')
-    .attr('width', fs*2);
-
-$('nav #city-buttons button').click(function () {
-    window.scrollTo({
-        top: document.getElementById('cities').offsetTop,
-        behavior: "smooth"
+            if (window.innerWidth < 750) {
+                $t.parent().prepend($t);
+                $t.siblings()
+                    .fadeOut({
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false,
+                    })
+                    .removeClass('mob-vis');
+            }
+        }
     });
 
-    const $t = $(this);
-    $('nav button').removeClass('active');
-    $t.addClass('active');
-    $('#viewer').attr('src', `webplayer/webplayer.html?load=${$t.data('city')}.json`);
-
-});
-
-$('#up').click(function () {
-    window.scrollTo({
-        top: document.getElementById('cities').offsetTop - window.innerHeight / 3,
-        behavior: "smooth"
+    const tip = tippy('a#help', {
+        content: `
+<div>
+<h5>Довідка</h5>
+<p>3D-макет міста можна <strong>збільшувати</strong> за допомогою коліщатка миші або тачпаду.</p>
+<p>Клікніть й тягніть, щоб <strong>обертати</strong> макет.</p>
+<p class="caption">Дані висотності: OpenStreetMap</p>
+</div>`,
+        performance: true,
+        placement: 'bottom',
+        animation: 'perspective',
     });
-});
 
-$('#down').click(function () {
-    window.scrollTo({
-        top: document.getElementById('cities').offsetTop + window.innerHeight * 1,
-        behavior: "smooth"
+    window.addEventListener('scroll', function () {
+        tippy.hideAllPoppers();
     });
+    
 });

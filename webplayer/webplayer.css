@@ -68,6 +68,10 @@
   overflow: hidden;
   cursor: move; }
   #main_canvas_cont * {
-    cursor: inherit !important; }
+    cursor: inherit; }
+
+  #main_canvas_cont div {
+    cursor: pointer;
+  }
 
 /*# sourceMappingURL=webplayer.css.map*/
