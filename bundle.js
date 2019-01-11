@@ -31,12 +31,8 @@ $(document).ready(function () {
 
             if (window.innerWidth < 750) {
                 $t.parent().prepend($t);
-                $t.siblings()
-                    .fadeOut({
-                        duration: 750,
-                        easing: 'linear',
-                        queue: false,
-                    })
+                $t.siblings('button')
+                    .hide()
                     .removeClass('mob-vis');
             }
         }
