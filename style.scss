@@ -4,7 +4,7 @@ $orange: #d0693a;
 
 $medium: ' screen and (min-width: 577px)';
 $max_medium: ' screen and (max-width: 949.99px)';
-$xlarge: ' screen and (min-width: 1300px)';
+$xlarge: ' screen and (min-width: 1400px)';
 $large: ' screen and (min-width: 950px)';
 $mobile: ' screen and (max-width: 577px)';
 
@@ -107,8 +107,19 @@ header {
   background-color: rgba($bgcol, 0.5);
   grid-template-columns: 1fr;
   color: $orange;
-  padding: 0 10% 0 10%;
-  margin-top: -2em;
+  margin: -2em 1em 0 1em;
+
+  @media #{$medium} {
+    margin: 0 2em 0 7.5%;
+  }
+  
+  @media #{$large} {
+    margin: 0 7.5% 0 20%;
+  }
+
+  @media #{$xlarge} {
+    margin: 0 15% 0 25%;
+  }
 
   img {
     display: none;
@@ -119,9 +130,9 @@ header {
     grid-row: 1 / 2;
     line-height: 1;
     margin: 0 0 1rem 0;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: normal;
+    letter-spacing: 0.01em;
     padding: 0;
   }
 
@@ -145,25 +156,29 @@ header {
     span {
       font-weight: 500;
     }
+
+    p {
+      margin-bottom: 0;
+    }
   }
 }
 
 @media #{$large} {
   header {
     grid-template-columns: auto 1fr;
-    margin-top: 30.2vw;
+    //margin-top: 30.2vw;
+    margin-top: 35vw;
 
     img {
       display: block;
       width: 15em;
-      margin: 0 5rem 0 0;
+      margin: 0 3em 0 -9%;
       padding: 0;
     }
 
     h1 {
       font-size: 3rem;
-      margin: auto 0 auto 0;
-      grid-row: 1 / 2;
+      margin: auto 0 0.25em 0;
       grid-column: 2 / 3;
     }
 
@@ -175,7 +190,7 @@ header {
 
     h6 {
       font-size: 1rem;
-      padding: 0 0 0 9%;
+      padding: 0;
       grid-row: 2 / 3;
       grid-column: 1 / 2;
     }
