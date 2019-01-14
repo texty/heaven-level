@@ -2,7 +2,6 @@
 node_modules/
 blend/
 *.pdf
-webplayer/shaders
 webplayer/*.bin
 webplayer/*.json
 .sass-cache/
