@@ -202,7 +202,7 @@ article {
   grid-template-columns: 1fr;
 }
 
-section.read {
+.read {
   margin: 3em 1em 0 1em;
 
   h3 {
@@ -238,6 +238,13 @@ section.read {
   }
 }
 
+div#tip-to-map {
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
 p.caption {
   font-size: 0.75em;
   color: lighten($fontcol, 30%);
@@ -246,7 +253,7 @@ p.caption {
 }
 
 section#cities {
-  margin: 4em 0 0 0;
+  margin: 0 0 0 0;
   padding: 0;
   height: 75vh;
   background-color: $bgcol;
