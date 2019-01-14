@@ -370,7 +370,7 @@ img#price {
 
 img.chart.mob-only {
   @media #{$medium} {
-    display: block;
+    display: none;
   }
 }
 
