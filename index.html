@@ -77,22 +77,19 @@
         <p>Сучасна містобудівна теорія переконує, що невисокі будинки зручніші для життя, ніж висотки. Оптимальна висота для людського комфорту – максимум сьомий поверх, звідки ще можна розгледіти силуети перехожих, впізнати знайомого. Урбаністи (люди, які займаються плануванням міст) стверджують: що нижче живе людина, то більше шансів, що вона спілкуватиметься з сусідами й дбатиме про спільний простір унизу. Бо тому, хто живе на тридцятому поверсі, надто далеко від землі, аби перейматися нею.</p>
     </section>
 
-    <div class="read" id="tip-to-map">
-        <p>3D макети міст можна збільшувати й обертати</p>
+    <div class="read">
+        <p><span class="orange">Помаранчевим</span> показано поверхи вище 16го. Повні макети міст можна переглянути в кінці матеріалу</p>
     </div>
 
-    <section id="cities">
+    <section id="cities-photo">
         <nav>
             <button data-city="kyiv" class="active">Київ</button>
             <button data-city="berlin">Берлін</button>
             <button data-city="newyork">Нью-Йорк</button>
             <button data-city="bucharest">Бухарест</button>
             <button data-city="warsaw">Варшава</button>
-            <a id="help" role="button">
-                <i class="fas fa-info-circle"></i>
-            </a>
         </nav>
-        <iframe id="viewer" src="webplayer/webplayer.html?load=http://texty.org.ua/maps/blender/kyiv.json"></iframe>
+        <img src="img/kyiv.jpg">
     </section>
 
     <section class="read">
@@ -213,6 +210,25 @@
 
         <p><strong>Берлін</strong> в окремих районах не зводить нічого нового (в районі Бундестагу будинки здебільшого мають максимальну висоту 5-7 поверхів). Проте, зауважує Антон, загалом німці сміливіші в тому, щоб поєднувати стару забудову з новими зразками. При цьому, дотримуються обмежень щодо висоти й щільності. До того ж, впорядковане будівництво доповнює зручна інфраструктура (метро, велосипедні доріжки).</p>
         <p>Антон вважає, що Київ має наслідувати цей шлях: берегти те, що належить, і давати можливість бізнесменам розвинути місто, зосереджуючи висотки у визначених місцях.</p>
+    </section>
+
+    <div class="read" id="tip-to-map">
+        <p class="big">Тут можна переглянути всі міста в 3D</p>
+        <p>Обережно: макети довго завантажуються і споживають багато трафіку</p>
+    </div>
+
+    <section id="cities">
+        <nav>
+            <button data-city="kyiv" class="active">Київ</button>
+            <button data-city="berlin">Берлін</button>
+            <button data-city="newyork">Нью-Йорк</button>
+            <button data-city="bucharest">Бухарест</button>
+            <button data-city="warsaw">Варшава</button>
+            <a id="help" role="button">
+                <i class="fas fa-info-circle"></i>
+            </a>
+        </nav>
+        <iframe id="viewer" src="webplayer/webplayer.html?load=http://texty.org.ua/maps/blender/kyiv.json"></iframe>
     </section>
 </article>
 

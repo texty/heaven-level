@@ -12,11 +12,12 @@ $(document).ready(function () {
     
     $('nav button').click(function () {
         const $t = $(this);
+        const $sect = $t.closest('section');
         if ($t.hasClass('active')) { 
             if (window.innerWidth < 750) {
                 $t.siblings('button')
                     .fadeToggle({
-                        duration: 750,
+                        duration: 500,
                         easing: 'linear',
                         queue: false,
                     })
@@ -25,13 +26,18 @@ $(document).ready(function () {
                 return;
             }
         } else {
-            $('nav button').removeClass('active');
+            $sect.find('nav button').removeClass('active');
             $t.addClass('active');
-            $('#viewer')
-                .attr(
-                    'src',
-                    `webplayer/webplayer.html?load=http://texty.org.ua/maps/blender/${$t.data('city')}.json`
-                );
+            if ($sect.attr('id') === 'cities-photo') {
+                $('#cities-photo img')
+                    .attr('src', `img/${$t.data('city')}.jpg`);
+            } else {
+                $('#viewer')
+                    .attr(
+                        'src',
+                        `webplayer/webplayer.html?load=http://texty.org.ua/maps/blender/${$t.data('city')}.json`
+                    );
+            }
 
             if (window.innerWidth < 750) {
                 $t.parent().prepend($t);
