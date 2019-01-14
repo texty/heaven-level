@@ -27,7 +27,11 @@ $(document).ready(function () {
         } else {
             $('nav button').removeClass('active');
             $t.addClass('active');
-            $('#viewer').attr('src', `webplayer/webplayer.html?load=${$t.data('city')}.json`);
+            $('#viewer')
+                .attr(
+                    'src',
+                    `webplayer/webplayer.html?load=http://texty.org.ua/maps/blender/${$t.data('city')}.json`
+                );
 
             if (window.innerWidth < 750) {
                 $t.parent().prepend($t);
