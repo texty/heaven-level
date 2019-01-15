@@ -182,14 +182,20 @@ article {
   h3 {
     color: $orange;
     font-weight: 400;
+    margin: 0;
 
     &.upper {
       text-transform: uppercase;
+      font-weight: 500;
     }
   }
 
   p {
     margin: 0 0 1.5em 0;
+  }
+
+  p:first-of-type {
+    margin-top: 1em;
   }
 
   a {
@@ -238,12 +244,15 @@ p.caption {
   text-align: end;
 }
 
+section#cities {
+  border-bottom: 1px solid darken($bgcol, 30%);
+}
+
 section#cities, #cities-photo {
   margin: 0 0 0 0;
   padding: 0;
   height: 75vh;
   background-color: $bgcol;
-  border-bottom: 1px solid darken($bgcol, 30%);
   z-index: 2;
 
   nav {
@@ -338,6 +347,7 @@ section#cities, #cities-photo {
   @media #{$large} {
     display: flex;
     justify-content: center;
+
 
     img {
       height: 100%;
