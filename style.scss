@@ -103,43 +103,36 @@ body {
 }
 
 header {
-  display: grid;
   background-color: rgba($bgcol, 0.5);
-  grid-template-columns: 1fr;
   color: $orange;
   margin: -2em 1em 0 1em;
 
   @media #{$medium} {
-    margin: 0 2em 0 7.5%;
+    margin: 0 5% 0 5%;
   }
   
   @media #{$large} {
-    margin: 0 7.5% 0 20%;
+    margin: 37vw 12.5% 0 12.5%;
   }
 
   @media #{$xlarge} {
-    margin: 0 15% 0 25%;
-  }
-
-  img {
-    display: none;
+    margin: 37vw 17.5% 0 17.5%;
   }
 
   h1 {
     font-size: 2rem;
-    grid-row: 1 / 2;
-    line-height: 1;
     margin: 0 0 1rem 0;
     font-weight: 600;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     letter-spacing: 0.01em;
+    text-align: center;
     padding: 0;
   }
 
   h2 {
     font-size: 1rem;
-    grid-row: 2 / 3;
     font-weight: 400;
+    text-align: center;
     padding: 0;
     margin: 0;
   }
@@ -147,52 +140,32 @@ header {
   h6 {
     font-size: 0.85rem;
     font-weight: 500;
-    margin: 0;
-    grid-row: 3 / 4;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    text-align: center;
+    margin: 2em 0 0 0;
+    line-height: 2;
+    color: lighten($fontcol, 50%);
 
     span {
       font-weight: 500;
-    }
-
-    p {
-      margin-bottom: 0;
     }
   }
 }
 
 @media #{$large} {
   header {
-    grid-template-columns: auto 1fr;
     //margin-top: 30.2vw;
-    margin-top: 35vw;
-
-    img {
-      display: block;
-      width: 15em;
-      margin: 0 3em 0 -9%;
-      padding: 0;
-    }
 
     h1 {
-      font-size: 3rem;
-      margin: auto 0 0.25em 0;
-      grid-column: 2 / 3;
+      font-size: 4.5rem;
     }
 
     h2 {
-      font-size: 1.5rem;
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
+      font-size: 1.5em;
     }
 
     h6 {
       font-size: 1rem;
       padding: 0;
-      grid-row: 2 / 3;
-      grid-column: 1 / 2;
     }
   }
 }
@@ -207,11 +180,10 @@ article {
 
   h3 {
     color: $orange;
-    text-transform: uppercase;
     font-weight: 400;
 
-    span {
-      text-transform: none;
+    &.upper {
+      text-transform: uppercase;
     }
   }
 
@@ -238,13 +210,23 @@ article {
   }
 }
 
+#before-photos {
+  color: $orange;
+  font-weight: 400;
+}
+
 div#tip-to-map {
   margin-top: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+
+  p {
+    margin: 0;
+  }
 
   p.big {
     font-weight: 600;
     font-size: 1em;
+    color: $fontcol;
   }
 }
 
@@ -350,13 +332,36 @@ section#cities, #cities-photo {
 }
 
 #cities-photo {
-  display: flex;
-  justify-content: center;
+  display: none;
+
+  @media #{$large} {
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+#city-mobile {
+  margin-top: 0;
+  p {
+    margin: 0;
+  }
+
+  strong {
+    font-size: 1.25em;
+  }
 
   img {
-    height: 100%;
-    width: auto;
-    transition: all 0.5s;
+    margin: 0 0 2em 0;
+    border-bottom: 1px solid lighten($fontcol, 70%);
+  }
+
+  @media #{$large} {
+    display: none;
   }
 }
 
