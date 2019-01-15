@@ -29,7 +29,11 @@ $(document).ready(function () {
             $t.addClass('active');
             if ($sect.attr('id') === 'cities-photo') {
                 $('#cities-photo img')
-                    .attr('src', `img/${$t.data('city')}.jpg`);
+                    .css('opacity', 0)
+                    .attr('src', `img/${$t.data('city')}.jpg`)
+                    .on('load', function () {
+                        $(this).css('opacity', 1)
+                    });
             } else {
                 $('#viewer')
                     .attr(
