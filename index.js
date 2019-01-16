@@ -38,7 +38,7 @@ $(document).ready(function () {
                 $('#viewer')
                     .attr(
                         'src',
-                        `webplayer/webplayer.html?load=http://texty.org.ua/maps/blender/${$t.data('city')}.json`
+                        `webplayer/webplayer.html?load=${$t.data('city')}.json`
                     );
             }
 
