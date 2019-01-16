@@ -361,6 +361,7 @@ section#cities, #cities-photo {
   display: none;
 
   @media #{$large} {
+    height: 100vh;
     display: flex;
     justify-content: center;
     background: url(img/loading.gif);
