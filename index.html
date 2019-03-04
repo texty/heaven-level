@@ -39,6 +39,8 @@
             <a href="http://texty.org.ua" target="_blank"><img src="img/texty-logo.png"></a>
         </div>
         <div id="soc">
+            <div id="translate"><a href="http://texty.org.ua/d/2019/lonely-heaven/en"> <span> English </span> </a></div>
+
             <a href="https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/2019/lonely-heaven" target="_blank" class="share-btn"><i class="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com/intent/tweet?text=http://texty.org.ua/d/2019/lonely-heaven" target="_blank" class="share-btn"><i class="fab fa-twitter"></i></a>
         </div>
@@ -273,6 +275,23 @@
 </footer>
 
 <script src="bundle.js" type="text/javascript"></script>
+
+<!--  Треба вставити в bundle -->
+<script>
+    jQuery(function() {
+        var getWindow = jQuery(window);
+        var windowHeight = getWindow.height();
+        jQuery(window).scroll(function(){
+            if(jQuery(window).scrollTop() > windowHeight ){
+                jQuery("#translate").css("display", "none");
+            } else {
+                jQuery("#translate").css("display", "flex");
+            }
+
+        });
+    });
+
+</script>
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-18136548-1']);

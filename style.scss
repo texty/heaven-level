@@ -8,7 +8,6 @@ $xlarge: ' screen and (min-width: 1400px)';
 $large: ' screen and (min-width: 950px)';
 $mobile: ' screen and (max-width: 577px)';
 
-
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -17,7 +16,6 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.75;
-
 
   @media #{$large} {
     font-size: 1.25rem;
@@ -71,6 +69,7 @@ body {
   position: absolute;
   top: 0;
 
+
   #pub-logo {
     img {
       padding: 0;
@@ -82,12 +81,36 @@ body {
 
   #soc {
     position: fixed;
-    display: flex;
+    display: flex!important;
     top: 1em;
     right: 1em;
-    flex-direction: column;
+    flex-direction: row;
     @media #{$large} {
       display: block;
+    }
+
+    div#translate {
+      display:flex;
+    }
+
+    a {
+      margin:auto;
+      text-decoration: none;
+    }
+
+    a span {
+      font-family:'Roboto', sans-serif;
+      text-decoration: none;
+      border-bottom: 1px dashed black;
+      margin-right:20px;
+      font-weight:400;
+      font-size:20px;
+      letter-spacing: 1px;
+      color:black!important;
+      background-color: rgb(255, 255, 255);
+      @media(max-width:800px){
+        font-size:14px;
+      }
     }
   }
 
