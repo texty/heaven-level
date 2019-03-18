@@ -6,3 +6,5 @@ webplayer/*.bin
 webplayer/*.json
 .sass-cache/
 bins/
+.vscode
+*.xml
