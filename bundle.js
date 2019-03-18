@@ -116,6 +116,21 @@ $(document).ready(function () {
     }
     window.__textySocialButtonsHandler = true;
 }());
+
+
+/* щоб кнопка перекладу зникала, коли header прогортався*/
+jQuery(function() {
+    var getWindow = jQuery(window);
+    var windowHeight = getWindow.height();
+    jQuery(window).scroll(function(){
+        if(jQuery(window).scrollTop() > windowHeight ){
+            jQuery("#translate").css("display", "none");
+        } else {
+            jQuery("#translate").css("display", "flex");
+        }
+
+    });
+});
 },{"jquery":2,"tippy.js":3}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
