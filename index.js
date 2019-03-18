@@ -118,14 +118,14 @@ $(document).ready(function () {
 
 
 /* щоб кнопка перекладу зникала, коли header прогортався*/
-jQuery(function() {
-    var getWindow = jQuery(window);
+$(function() {
+    var getWindow = $(window);
     var windowHeight = getWindow.height();
-    jQuery(window).scroll(function(){
-        if(jQuery(window).scrollTop() > windowHeight ){
-            jQuery("#translate").css("display", "none");
+    $(window).scroll(function(){
+        if($(window).scrollTop() > windowHeight ){
+            $("#translate").css("display", "none");
         } else {
-            jQuery("#translate").css("display", "flex");
+            $("#translate").css("display", "flex");
         }
 
     });
